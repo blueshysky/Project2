@@ -8,66 +8,90 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 /* Begin site styles below */
 
+/* static items*/
 html {
   font-size: 1.225em;
-  padding: .315em;
+  padding: 0.315em;
 }
 
-.mainpage{
+.mainpage {
   align-self: center;
 }
-<!-- layout -->
-#navi{
+
+/* page layout */
+/*font size changes*/
+
+.ul #navi li {
   display: flex;
+  flex-direction: row;
+  padding-right: 0.313em;
   line-height: 1.225em;
 }
 
 h1,
 h2,
 h3,
-section{
+section {
   text-align: center;
 }
 
 
-h1{
+h1 {
   display: flex;
-  order: 1;
-  font-size:1.5em;
+  font-size: 1.5em;
 }
 
 h2,
-h3{
-  font-size: 1.0em;
+h3 {
+  font-size: 1em;
   font-weight: bold;
-}
-  .contain{
-  display: flex;
-  flex-direction: row;
-  margin:0.313em;
-  padding:0.313em;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-}
-.contain li{
-  padding: 0.313em;
-}
-.contain h1{
-  order: 0;
 }
 
 p {
   font-size: 0.688em;
   word-wrap: break-word;
-  padding: .313em;
+  padding: 0.313em;
 }
 
-li{
+li {
   font-size: 0.688em;
 }
 
-#baseimg{
+/*Box up items so that it becomes center */
+.contain {
+  display: flex;
+  flex-direction: column;
+  margin: 0.313em;
+  padding: 0.313em, 0, 0, 0.313em;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.contain ul {
+  flex-direction: row;
+}
+
+/*
+up to 300 is 275 px
+500+ img is 450 px
+ */
+#baseimg {
+  max-width: 100%;
   align-content: center;
 }
-<!-- img sizes -->
+/* Trying to make responsive img sizes */
+@media screen and (max-width: 300px) {
+  #baseimg {
+    max-width: 50%;
+  }
+  #caption {
+    font-size: 0.626em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #baseimg {
+    max-width: 75%;
+  }
+}
